@@ -1,0 +1,243 @@
+Training in distributed mode with multiple processes, 1 GPU per process. Process 3, total 8.
+Training in distributed mode with multiple processes, 1 GPU per process. Process 4, total 8.
+Training in distributed mode with multiple processes, 1 GPU per process. Process 0, total 8.
+Training in distributed mode with multiple processes, 1 GPU per process. Process 7, total 8.
+Training in distributed mode with multiple processes, 1 GPU per process. Process 5, total 8.
+Training in distributed mode with multiple processes, 1 GPU per process. Process 1, total 8.
+Training in distributed mode with multiple processes, 1 GPU per process. Process 6, total 8.
+Training in distributed mode with multiple processes, 1 GPU per process. Process 2, total 8.
+Model mobilenetv2_100 created, param count:3504872
+Data processing configuration for current model + dataset:
+	input_size: (3, 224, 224)
+	interpolation: bicubic
+	mean: (0.485, 0.456, 0.406)
+	std: (0.229, 0.224, 0.225)
+	crop_pct: 0.875
+Selected optimization level O1:  Insert automatic casts around Pytorch functions and Tensor methods.
+
+Defaults for this optimization level are:
+enabled                : True
+opt_level              : O1
+cast_model_type        : None
+patch_torch_functions  : True
+keep_batchnorm_fp32    : None
+master_weights         : None
+loss_scale             : dynamic
+Processing user overrides (additional kwargs that are not None)...
+After processing overrides, optimization options are:
+enabled                : True
+opt_level              : O1
+cast_model_type        : None
+patch_torch_functions  : True
+keep_batchnorm_fp32    : None
+master_weights         : None
+loss_scale             : dynamic
+Using NVIDIA APEX AMP. Training in mixed precision.
+Using NVIDIA APEX DistributedDataParallel.
+Scheduled epochs: 310
+Train: 0 [   0/1251 (  0%)]  Loss: 6.958 (6.96)  Time: 5.024s,  203.82/s  (5.024s,  203.82/s)  LR: 1.000e-06  Data: 2.365 (2.365)
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 32768.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 32768.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 32768.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 32768.0
+
+
+
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 32768.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 32768.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 32768.0
+
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 32768.0
+Train: 0 [  50/1251 (  4%)]  Loss: 6.961 (6.96)  Time: 0.701s, 1459.96/s  (0.295s, 3471.02/s)  LR: 1.000e-06  Data: 0.022 (0.076)
+Train: 0 [ 100/1251 (  8%)]  Loss: 6.943 (6.95)  Time: 0.162s, 6302.55/s  (0.262s, 3907.61/s)  LR: 1.000e-06  Data: 0.019 (0.056)
+Train: 0 [ 150/1251 ( 12%)]  Loss: 6.953 (6.95)  Time: 0.158s, 6486.76/s  (0.254s, 4034.61/s)  LR: 1.000e-06  Data: 0.020 (0.059)
+Train: 0 [ 200/1251 ( 16%)]  Loss: 6.933 (6.95)  Time: 0.145s, 7064.95/s  (0.252s, 4065.06/s)  LR: 1.000e-06  Data: 0.023 (0.068)
+Train: 0 [ 250/1251 ( 20%)]  Loss: 6.942 (6.95)  Time: 0.155s, 6614.26/s  (0.249s, 4105.54/s)  LR: 1.000e-06  Data: 0.020 (0.070)
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0
+
+
+
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0
+
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0
+Train: 0 [ 300/1251 ( 24%)]  Loss: 6.936 (6.95)  Time: 0.146s, 7032.92/s  (0.255s, 4013.04/s)  LR: 1.000e-06  Data: 0.017 (0.065)
+Train: 0 [ 350/1251 ( 28%)]  Loss: 6.933 (6.94)  Time: 0.145s, 7045.49/s  (0.252s, 4061.09/s)  LR: 1.000e-06  Data: 0.023 (0.059)
+Train: 0 [ 400/1251 ( 32%)]  Loss: 6.940 (6.94)  Time: 0.152s, 6724.01/s  (0.249s, 4117.32/s)  LR: 1.000e-06  Data: 0.026 (0.055)
+Train: 0 [ 450/1251 ( 36%)]  Loss: 6.929 (6.94)  Time: 0.159s, 6426.58/s  (0.247s, 4149.65/s)  LR: 1.000e-06  Data: 0.021 (0.052)
+Train: 0 [ 500/1251 ( 40%)]  Loss: 6.934 (6.94)  Time: 0.161s, 6351.98/s  (0.247s, 4143.22/s)  LR: 1.000e-06  Data: 0.017 (0.049)
+Train: 0 [ 550/1251 ( 44%)]  Loss: 6.936 (6.94)  Time: 0.167s, 6135.90/s  (0.247s, 4151.88/s)  LR: 1.000e-06  Data: 0.017 (0.047)
+Train: 0 [ 600/1251 ( 48%)]  Loss: 6.934 (6.94)  Time: 0.154s, 6668.62/s  (0.245s, 4174.04/s)  LR: 1.000e-06  Data: 0.024 (0.045)
+Train: 0 [ 650/1251 ( 52%)]  Loss: 6.924 (6.94)  Time: 0.154s, 6660.92/s  (0.245s, 4185.24/s)  LR: 1.000e-06  Data: 0.023 (0.043)
+Train: 0 [ 700/1251 ( 56%)]  Loss: 6.928 (6.94)  Time: 0.643s, 1593.72/s  (0.245s, 4174.65/s)  LR: 1.000e-06  Data: 0.022 (0.041)
+Train: 0 [ 750/1251 ( 60%)]  Loss: 6.917 (6.94)  Time: 0.151s, 6767.02/s  (0.244s, 4188.93/s)  LR: 1.000e-06  Data: 0.021 (0.040)
+Train: 0 [ 800/1251 ( 64%)]  Loss: 6.933 (6.94)  Time: 1.225s,  835.79/s  (0.245s, 4175.41/s)  LR: 1.000e-06  Data: 0.017 (0.039)
+Train: 0 [ 850/1251 ( 68%)]  Loss: 6.925 (6.94)  Time: 0.165s, 6199.02/s  (0.245s, 4185.32/s)  LR: 1.000e-06  Data: 0.020 (0.038)
+Train: 0 [ 900/1251 ( 72%)]  Loss: 6.924 (6.94)  Time: 0.829s, 1235.31/s  (0.245s, 4179.72/s)  LR: 1.000e-06  Data: 0.017 (0.037)
+Train: 0 [ 950/1251 ( 76%)]  Loss: 6.920 (6.94)  Time: 0.139s, 7348.10/s  (0.247s, 4150.56/s)  LR: 1.000e-06  Data: 0.019 (0.036)
+Train: 0 [1000/1251 ( 80%)]  Loss: 6.919 (6.93)  Time: 0.702s, 1457.93/s  (0.248s, 4135.74/s)  LR: 1.000e-06  Data: 0.033 (0.036)
+Train: 0 [1050/1251 ( 84%)]  Loss: 6.922 (6.93)  Time: 0.154s, 6659.94/s  (0.248s, 4132.39/s)  LR: 1.000e-06  Data: 0.027 (0.035)
+Train: 0 [1100/1251 ( 88%)]  Loss: 6.918 (6.93)  Time: 0.158s, 6467.08/s  (0.247s, 4144.32/s)  LR: 1.000e-06  Data: 0.018 (0.035)
+Train: 0 [1150/1251 ( 92%)]  Loss: 6.923 (6.93)  Time: 0.655s, 1563.80/s  (0.248s, 4129.05/s)  LR: 1.000e-06  Data: 0.538 (0.037)
+Train: 0 [1200/1251 ( 96%)]  Loss: 6.923 (6.93)  Time: 0.270s, 3788.40/s  (0.247s, 4137.79/s)  LR: 1.000e-06  Data: 0.021 (0.039)
+Train: 0 [1250/1251 (100%)]  Loss: 6.917 (6.93)  Time: 0.114s, 8983.78/s  (0.247s, 4150.41/s)  LR: 1.000e-06  Data: 0.000 (0.041)
+Distributing BatchNorm running means and vars
+Test: [   0/48]  Time: 2.703 (2.703)  Loss:  6.8865 (6.8865)  Acc@1:  0.0000 ( 0.0000)  Acc@5:  0.0977 ( 0.0977)
+Test: [  48/48]  Time: 0.843 (0.317)  Loss:  6.8797 (6.9178)  Acc@1:  0.1179 ( 0.0980)  Acc@5:  0.2358 ( 0.4900)
+Current checkpoints:
+ ('./output/train/20220223-153746-mobilenetv2_100-224/checkpoint-0.pth.tar', 0.0979999999666214)
+
+Train: 1 [   0/1251 (  0%)]  Loss: 6.920 (6.92)  Time: 1.884s,  543.56/s  (1.884s,  543.56/s)  LR: 2.008e-04  Data: 1.712 (1.712)
+Train: 1 [  50/1251 (  4%)]  Loss: 6.929 (6.92)  Time: 0.164s, 6259.66/s  (0.225s, 4557.77/s)  LR: 2.008e-04  Data: 0.025 (0.083)
+Train: 1 [ 100/1251 (  8%)]  Loss: 6.921 (6.92)  Time: 0.165s, 6208.98/s  (0.208s, 4931.40/s)  LR: 2.008e-04  Data: 0.024 (0.064)
+Train: 1 [ 150/1251 ( 12%)]  Loss: 6.901 (6.92)  Time: 0.175s, 5838.85/s  (0.202s, 5074.94/s)  LR: 2.008e-04  Data: 0.022 (0.053)
+Train: 1 [ 200/1251 ( 16%)]  Loss: 6.898 (6.91)  Time: 0.342s, 2992.49/s  (0.198s, 5166.01/s)  LR: 2.008e-04  Data: 0.026 (0.047)
+Train: 1 [ 250/1251 ( 20%)]  Loss: 6.876 (6.91)  Time: 0.176s, 5817.89/s  (0.196s, 5235.90/s)  LR: 2.008e-04  Data: 0.028 (0.043)
+Train: 1 [ 300/1251 ( 24%)]  Loss: 6.844 (6.90)  Time: 0.155s, 6626.38/s  (0.195s, 5240.20/s)  LR: 2.008e-04  Data: 0.029 (0.043)
+Train: 1 [ 350/1251 ( 28%)]  Loss: 6.846 (6.89)  Time: 0.155s, 6607.32/s  (0.193s, 5304.95/s)  LR: 2.008e-04  Data: 0.027 (0.042)
+Train: 1 [ 400/1251 ( 32%)]  Loss: 6.815 (6.88)  Time: 0.178s, 5745.58/s  (0.194s, 5285.81/s)  LR: 2.008e-04  Data: 0.028 (0.043)
+Train: 1 [ 450/1251 ( 36%)]  Loss: 6.837 (6.88)  Time: 0.175s, 5861.60/s  (0.193s, 5301.01/s)  LR: 2.008e-04  Data: 0.029 (0.043)
+Train: 1 [ 500/1251 ( 40%)]  Loss: 6.783 (6.87)  Time: 0.177s, 5774.31/s  (0.193s, 5293.85/s)  LR: 2.008e-04  Data: 0.019 (0.043)
+Train: 1 [ 550/1251 ( 44%)]  Loss: 6.751 (6.86)  Time: 0.171s, 6001.89/s  (0.193s, 5302.65/s)  LR: 2.008e-04  Data: 0.023 (0.044)
+Train: 1 [ 600/1251 ( 48%)]  Loss: 6.807 (6.86)  Time: 0.166s, 6173.36/s  (0.193s, 5310.96/s)  LR: 2.008e-04  Data: 0.021 (0.044)
+Train: 1 [ 650/1251 ( 52%)]  Loss: 6.750 (6.85)  Time: 0.160s, 6412.92/s  (0.193s, 5318.27/s)  LR: 2.008e-04  Data: 0.028 (0.044)
+Train: 1 [ 700/1251 ( 56%)]  Loss: 6.793 (6.84)  Time: 0.165s, 6220.11/s  (0.193s, 5317.21/s)  LR: 2.008e-04  Data: 0.022 (0.044)
+Train: 1 [ 750/1251 ( 60%)]  Loss: 6.744 (6.84)  Time: 0.156s, 6553.34/s  (0.192s, 5323.31/s)  LR: 2.008e-04  Data: 0.024 (0.044)
+Train: 1 [ 800/1251 ( 64%)]  Loss: 6.741 (6.83)  Time: 0.154s, 6640.20/s  (0.192s, 5322.87/s)  LR: 2.008e-04  Data: 0.020 (0.045)
+Train: 1 [ 850/1251 ( 68%)]  Loss: 6.672 (6.82)  Time: 0.181s, 5643.45/s  (0.192s, 5324.01/s)  LR: 2.008e-04  Data: 0.020 (0.045)
+Train: 1 [ 900/1251 ( 72%)]  Loss: 6.721 (6.82)  Time: 0.160s, 6410.85/s  (0.193s, 5314.22/s)  LR: 2.008e-04  Data: 0.034 (0.045)
+Train: 1 [ 950/1251 ( 76%)]  Loss: 6.688 (6.81)  Time: 0.169s, 6066.06/s  (0.193s, 5310.83/s)  LR: 2.008e-04  Data: 0.026 (0.046)
+Train: 1 [1000/1251 ( 80%)]  Loss: 6.684 (6.81)  Time: 0.196s, 5211.47/s  (0.193s, 5317.60/s)  LR: 2.008e-04  Data: 0.020 (0.045)
+Train: 1 [1050/1251 ( 84%)]  Loss: 6.715 (6.80)  Time: 0.168s, 6105.35/s  (0.193s, 5313.12/s)  LR: 2.008e-04  Data: 0.028 (0.045)
+Train: 1 [1100/1251 ( 88%)]  Loss: 6.644 (6.79)  Time: 0.298s, 3432.03/s  (0.193s, 5311.70/s)  LR: 2.008e-04  Data: 0.170 (0.045)
+Train: 1 [1150/1251 ( 92%)]  Loss: 6.728 (6.79)  Time: 0.276s, 3713.60/s  (0.193s, 5307.11/s)  LR: 2.008e-04  Data: 0.019 (0.045)
+Train: 1 [1200/1251 ( 96%)]  Loss: 6.652 (6.79)  Time: 0.181s, 5662.75/s  (0.193s, 5297.80/s)  LR: 2.008e-04  Data: 0.025 (0.045)
+Train: 1 [1250/1251 (100%)]  Loss: 6.628 (6.78)  Time: 0.113s, 9089.13/s  (0.193s, 5314.61/s)  LR: 2.008e-04  Data: 0.000 (0.044)
+Distributing BatchNorm running means and vars
+Test: [   0/48]  Time: 1.788 (1.788)  Loss:  5.9561 (5.9561)  Acc@1:  3.0273 ( 3.0273)  Acc@5: 12.5977 (12.5977)
+Test: [  48/48]  Time: 0.019 (0.208)  Loss:  5.5965 (6.1005)  Acc@1: 10.2594 ( 2.5260)  Acc@5: 19.4575 ( 8.0560)
+Current checkpoints:
+ ('./output/train/20220223-153746-mobilenetv2_100-224/checkpoint-1.pth.tar', 2.526000012512207)
+ ('./output/train/20220223-153746-mobilenetv2_100-224/checkpoint-0.pth.tar', 0.0979999999666214)
+
+Train: 2 [   0/1251 (  0%)]  Loss: 6.632 (6.63)  Time: 1.885s,  543.25/s  (1.885s,  543.25/s)  LR: 4.006e-04  Data: 1.746 (1.746)
+Train: 2 [  50/1251 (  4%)]  Loss: 6.705 (6.67)  Time: 0.178s, 5768.31/s  (0.225s, 4559.32/s)  LR: 4.006e-04  Data: 0.024 (0.077)
+Train: 2 [ 100/1251 (  8%)]  Loss: 6.646 (6.66)  Time: 0.160s, 6418.99/s  (0.207s, 4939.25/s)  LR: 4.006e-04  Data: 0.028 (0.052)
+Train: 2 [ 150/1251 ( 12%)]  Loss: 6.697 (6.67)  Time: 0.172s, 5958.07/s  (0.202s, 5066.08/s)  LR: 4.006e-04  Data: 0.023 (0.043)
+Train: 2 [ 200/1251 ( 16%)]  Loss: 6.651 (6.67)  Time: 0.168s, 6112.22/s  (0.198s, 5172.73/s)  LR: 4.006e-04  Data: 0.033 (0.039)
+Train: 2 [ 250/1251 ( 20%)]  Loss: 6.623 (6.66)  Time: 0.160s, 6418.26/s  (0.196s, 5235.10/s)  LR: 4.006e-04  Data: 0.021 (0.037)
+Train: 2 [ 300/1251 ( 24%)]  Loss: 6.569 (6.65)  Time: 0.188s, 5434.34/s  (0.196s, 5231.81/s)  LR: 4.006e-04  Data: 0.022 (0.035)
+Train: 2 [ 350/1251 ( 28%)]  Loss: 6.607 (6.64)  Time: 0.161s, 6377.06/s  (0.196s, 5232.80/s)  LR: 4.006e-04  Data: 0.029 (0.034)
+Train: 2 [ 400/1251 ( 32%)]  Loss: 6.563 (6.63)  Time: 0.166s, 6171.64/s  (0.194s, 5284.39/s)  LR: 4.006e-04  Data: 0.035 (0.033)
+Train: 2 [ 450/1251 ( 36%)]  Loss: 6.581 (6.63)  Time: 0.166s, 6168.90/s  (0.194s, 5279.24/s)  LR: 4.006e-04  Data: 0.022 (0.032)
+Train: 2 [ 500/1251 ( 40%)]  Loss: 6.435 (6.61)  Time: 0.172s, 5967.88/s  (0.194s, 5280.17/s)  LR: 4.006e-04  Data: 0.024 (0.032)
+Train: 2 [ 550/1251 ( 44%)]  Loss: 6.497 (6.60)  Time: 0.180s, 5702.26/s  (0.193s, 5301.30/s)  LR: 4.006e-04  Data: 0.026 (0.031)
+Train: 2 [ 600/1251 ( 48%)]  Loss: 6.601 (6.60)  Time: 0.173s, 5916.09/s  (0.193s, 5296.65/s)  LR: 4.006e-04  Data: 0.027 (0.031)
+Train: 2 [ 650/1251 ( 52%)]  Loss: 6.540 (6.60)  Time: 0.158s, 6500.81/s  (0.193s, 5304.86/s)  LR: 4.006e-04  Data: 0.023 (0.030)
+Train: 2 [ 700/1251 ( 56%)]  Loss: 6.489 (6.59)  Time: 0.423s, 2418.54/s  (0.193s, 5301.04/s)  LR: 4.006e-04  Data: 0.023 (0.030)
+Train: 2 [ 750/1251 ( 60%)]  Loss: 6.503 (6.58)  Time: 0.167s, 6138.93/s  (0.192s, 5321.15/s)  LR: 4.006e-04  Data: 0.034 (0.030)
+Train: 2 [ 800/1251 ( 64%)]  Loss: 6.476 (6.58)  Time: 0.457s, 2241.51/s  (0.192s, 5319.73/s)  LR: 4.006e-04  Data: 0.338 (0.031)
+Train: 2 [ 850/1251 ( 68%)]  Loss: 6.424 (6.57)  Time: 0.178s, 5754.59/s  (0.193s, 5307.90/s)  LR: 4.006e-04  Data: 0.026 (0.032)
+Train: 2 [ 900/1251 ( 72%)]  Loss: 6.428 (6.56)  Time: 0.171s, 5982.25/s  (0.193s, 5306.18/s)  LR: 4.006e-04  Data: 0.030 (0.033)
+Train: 2 [ 950/1251 ( 76%)]  Loss: 6.438 (6.56)  Time: 0.168s, 6110.60/s  (0.193s, 5313.91/s)  LR: 4.006e-04  Data: 0.026 (0.033)
+Train: 2 [1000/1251 ( 80%)]  Loss: 6.428 (6.55)  Time: 0.166s, 6182.17/s  (0.193s, 5312.35/s)  LR: 4.006e-04  Data: 0.035 (0.032)
+Train: 2 [1050/1251 ( 84%)]  Loss: 6.500 (6.55)  Time: 0.362s, 2828.01/s  (0.193s, 5308.37/s)  LR: 4.006e-04  Data: 0.030 (0.032)
+Train: 2 [1100/1251 ( 88%)]  Loss: 6.410 (6.54)  Time: 0.200s, 5114.01/s  (0.193s, 5300.43/s)  LR: 4.006e-04  Data: 0.026 (0.032)
+Train: 2 [1150/1251 ( 92%)]  Loss: 6.324 (6.53)  Time: 0.157s, 6507.88/s  (0.193s, 5295.34/s)  LR: 4.006e-04  Data: 0.022 (0.031)
+Train: 2 [1200/1251 ( 96%)]  Loss: 6.420 (6.53)  Time: 0.163s, 6284.36/s  (0.194s, 5289.00/s)  LR: 4.006e-04  Data: 0.022 (0.031)
+Train: 2 [1250/1251 (100%)]  Loss: 6.468 (6.53)  Time: 0.113s, 9039.70/s  (0.193s, 5311.93/s)  LR: 4.006e-04  Data: 0.000 (0.031)
+Distributing BatchNorm running means and vars
+Test: [   0/48]  Time: 1.778 (1.778)  Loss:  5.1876 (5.1876)  Acc@1:  7.4219 ( 7.4219)  Acc@5: 22.8516 (22.8516)
+Test: [  48/48]  Time: 0.019 (0.219)  Loss:  4.5310 (5.3344)  Acc@1: 21.5802 ( 7.0440)  Acc@5: 37.9717 (19.7260)
+Current checkpoints:
+ ('./output/train/20220223-153746-mobilenetv2_100-224/checkpoint-2.pth.tar', 7.044000001220703)
+ ('./output/train/20220223-153746-mobilenetv2_100-224/checkpoint-1.pth.tar', 2.526000012512207)
+ ('./output/train/20220223-153746-mobilenetv2_100-224/checkpoint-0.pth.tar', 0.0979999999666214)
+
+Train: 3 [   0/1251 (  0%)]  Loss: 6.478 (6.48)  Time: 1.681s,  609.08/s  (1.681s,  609.08/s)  LR: 6.004e-04  Data: 1.556 (1.556)
+Train: 3 [  50/1251 (  4%)]  Loss: 6.528 (6.50)  Time: 0.161s, 6351.71/s  (0.223s, 4593.47/s)  LR: 6.004e-04  Data: 0.024 (0.079)
+Train: 3 [ 100/1251 (  8%)]  Loss: 6.382 (6.46)  Time: 0.159s, 6442.64/s  (0.207s, 4948.24/s)  LR: 6.004e-04  Data: 0.028 (0.063)
+Train: 3 [ 150/1251 ( 12%)]  Loss: 6.431 (6.45)  Time: 0.194s, 5287.60/s  (0.201s, 5101.91/s)  LR: 6.004e-04  Data: 0.021 (0.054)
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0
+
+
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0
+Train: 3 [ 200/1251 ( 16%)]  Loss: 6.369 (6.44)  Time: 0.189s, 5419.32/s  (0.199s, 5145.06/s)  LR: 6.004e-04  Data: 0.020 (0.046)
+Train: 3 [ 250/1251 ( 20%)]  Loss: 6.281 (6.41)  Time: 0.157s, 6515.78/s  (0.196s, 5213.16/s)  LR: 6.004e-04  Data: 0.027 (0.043)
+Train: 3 [ 300/1251 ( 24%)]  Loss: 6.302 (6.40)  Time: 0.177s, 5772.80/s  (0.195s, 5259.82/s)  LR: 6.004e-04  Data: 0.021 (0.040)
+Train: 3 [ 350/1251 ( 28%)]  Loss: 6.393 (6.40)  Time: 0.169s, 6060.77/s  (0.194s, 5285.30/s)  LR: 6.004e-04  Data: 0.019 (0.039)
+Train: 3 [ 400/1251 ( 32%)]  Loss: 6.307 (6.39)  Time: 0.172s, 5947.23/s  (0.194s, 5264.83/s)  LR: 6.004e-04  Data: 0.029 (0.037)
+Train: 3 [ 450/1251 ( 36%)]  Loss: 6.289 (6.38)  Time: 0.162s, 6325.39/s  (0.194s, 5283.72/s)  LR: 6.004e-04  Data: 0.027 (0.036)
+Train: 3 [ 500/1251 ( 40%)]  Loss: 6.293 (6.37)  Time: 0.179s, 5718.72/s  (0.193s, 5299.76/s)  LR: 6.004e-04  Data: 0.030 (0.035)
+Train: 3 [ 550/1251 ( 44%)]  Loss: 6.232 (6.36)  Time: 0.167s, 6123.26/s  (0.193s, 5309.05/s)  LR: 6.004e-04  Data: 0.033 (0.034)
+Train: 3 [ 600/1251 ( 48%)]  Loss: 6.418 (6.36)  Time: 0.165s, 6210.14/s  (0.192s, 5322.70/s)  LR: 6.004e-04  Data: 0.031 (0.034)
+Train: 3 [ 650/1251 ( 52%)]  Loss: 6.265 (6.35)  Time: 0.164s, 6232.66/s  (0.193s, 5308.94/s)  LR: 6.004e-04  Data: 0.021 (0.033)
+Train: 3 [ 700/1251 ( 56%)]  Loss: 6.353 (6.35)  Time: 0.250s, 4093.05/s  (0.193s, 5317.07/s)  LR: 6.004e-04  Data: 0.030 (0.033)
+Train: 3 [ 750/1251 ( 60%)]  Loss: 6.219 (6.35)  Time: 0.162s, 6335.02/s  (0.192s, 5323.27/s)  LR: 6.004e-04  Data: 0.035 (0.033)
+Train: 3 [ 800/1251 ( 64%)]  Loss: 6.215 (6.34)  Time: 0.156s, 6568.54/s  (0.193s, 5310.78/s)  LR: 6.004e-04  Data: 0.024 (0.032)
+Train: 3 [ 850/1251 ( 68%)]  Loss: 6.115 (6.33)  Time: 0.155s, 6588.13/s  (0.193s, 5310.45/s)  LR: 6.004e-04  Data: 0.023 (0.032)
+Train: 3 [ 900/1251 ( 72%)]  Loss: 6.279 (6.32)  Time: 0.169s, 6047.86/s  (0.193s, 5305.48/s)  LR: 6.004e-04  Data: 0.030 (0.031)
+Train: 3 [ 950/1251 ( 76%)]  Loss: 6.349 (6.32)  Time: 0.166s, 6160.04/s  (0.193s, 5305.56/s)  LR: 6.004e-04  Data: 0.020 (0.031)
+Train: 3 [1000/1251 ( 80%)]  Loss: 6.307 (6.32)  Time: 0.170s, 6028.21/s  (0.193s, 5307.03/s)  LR: 6.004e-04  Data: 0.022 (0.031)
+Train: 3 [1050/1251 ( 84%)]  Loss: 6.165 (6.32)  Time: 0.203s, 5032.51/s  (0.193s, 5303.50/s)  LR: 6.004e-04  Data: 0.031 (0.031)
+Train: 3 [1100/1251 ( 88%)]  Loss: 6.124 (6.31)  Time: 0.740s, 1383.81/s  (0.193s, 5293.25/s)  LR: 6.004e-04  Data: 0.626 (0.031)
+Train: 3 [1150/1251 ( 92%)]  Loss: 6.253 (6.31)  Time: 0.163s, 6301.38/s  (0.193s, 5294.71/s)  LR: 6.004e-04  Data: 0.019 (0.032)
+Train: 3 [1200/1251 ( 96%)]  Loss: 6.259 (6.30)  Time: 0.181s, 5651.12/s  (0.194s, 5288.82/s)  LR: 6.004e-04  Data: 0.029 (0.033)
+Train: 3 [1250/1251 (100%)]  Loss: 6.159 (6.30)  Time: 0.114s, 9016.87/s  (0.193s, 5306.40/s)  LR: 6.004e-04  Data: 0.000 (0.033)
+Distributing BatchNorm running means and vars
+Test: [   0/48]  Time: 1.911 (1.911)  Loss:  4.2315 (4.2315)  Acc@1: 17.7734 (17.7734)  Acc@5: 42.7734 (42.7734)
+Test: [  48/48]  Time: 0.019 (0.220)  Loss:  3.7917 (4.6785)  Acc@1: 33.4906 (13.6480)  Acc@5: 48.4670 (31.7440)
+Current checkpoints:
+ ('./output/train/20220223-153746-mobilenetv2_100-224/checkpoint-3.pth.tar', 13.648000068359375)
+ ('./output/train/20220223-153746-mobilenetv2_100-224/checkpoint-2.pth.tar', 7.044000001220703)
+ ('./output/train/20220223-153746-mobilenetv2_100-224/checkpoint-1.pth.tar', 2.526000012512207)
+ ('./output/train/20220223-153746-mobilenetv2_100-224/checkpoint-0.pth.tar', 0.0979999999666214)
+
+Train: 4 [   0/1251 (  0%)]  Loss: 6.110 (6.11)  Time: 1.893s,  541.07/s  (1.893s,  541.07/s)  LR: 8.002e-04  Data: 1.762 (1.762)
+Train: 4 [  50/1251 (  4%)]  Loss: 6.034 (6.07)  Time: 0.191s, 5362.35/s  (0.228s, 4482.13/s)  LR: 8.002e-04  Data: 0.022 (0.085)
+Train: 4 [ 100/1251 (  8%)]  Loss: 6.241 (6.13)  Time: 0.176s, 5814.96/s  (0.209s, 4900.18/s)  LR: 8.002e-04  Data: 0.025 (0.064)
+Train: 4 [ 150/1251 ( 12%)]  Loss: 6.306 (6.17)  Time: 0.171s, 5996.63/s  (0.201s, 5106.96/s)  LR: 8.002e-04  Data: 0.022 (0.052)
+Train: 4 [ 200/1251 ( 16%)]  Loss: 6.016 (6.14)  Time: 0.185s, 5520.23/s  (0.198s, 5171.24/s)  LR: 8.002e-04  Data: 0.022 (0.046)
+Train: 4 [ 250/1251 ( 20%)]  Loss: 6.111 (6.14)  Time: 0.190s, 5389.13/s  (0.196s, 5230.65/s)  LR: 8.002e-04  Data: 0.024 (0.044)
+Train: 4 [ 300/1251 ( 24%)]  Loss: 6.061 (6.13)  Time: 0.165s, 6193.69/s  (0.195s, 5263.42/s)  LR: 8.002e-04  Data: 0.023 (0.043)
+Train: 4 [ 350/1251 ( 28%)]  Loss: 5.952 (6.10)  Time: 0.166s, 6159.81/s  (0.193s, 5307.38/s)  LR: 8.002e-04  Data: 0.019 (0.042)
+Train: 4 [ 400/1251 ( 32%)]  Loss: 6.131 (6.11)  Time: 0.207s, 4937.19/s  (0.193s, 5306.14/s)  LR: 8.002e-04  Data: 0.025 (0.040)
+Train: 4 [ 450/1251 ( 36%)]  Loss: 6.134 (6.11)  Time: 0.201s, 5093.19/s  (0.193s, 5319.43/s)  LR: 8.002e-04  Data: 0.029 (0.039)
+Train: 4 [ 500/1251 ( 40%)]  Loss: 6.136 (6.11)  Time: 0.203s, 5051.02/s  (0.192s, 5319.97/s)  LR: 8.002e-04  Data: 0.022 (0.039)
+Train: 4 [ 550/1251 ( 44%)]  Loss: 6.071 (6.11)  Time: 0.172s, 5943.81/s  (0.192s, 5337.16/s)  LR: 8.002e-04  Data: 0.024 (0.039)
+Train: 4 [ 600/1251 ( 48%)]  Loss: 6.088 (6.11)  Time: 0.190s, 5379.46/s  (0.192s, 5333.66/s)  LR: 8.002e-04  Data: 0.027 (0.039)
+Train: 4 [ 650/1251 ( 52%)]  Loss: 6.114 (6.11)  Time: 0.172s, 5940.91/s  (0.192s, 5344.58/s)  LR: 8.002e-04  Data: 0.031 (0.039)
+Train: 4 [ 700/1251 ( 56%)]  Loss: 6.115 (6.11)  Time: 0.191s, 5352.56/s  (0.191s, 5352.79/s)  LR: 8.002e-04  Data: 0.024 (0.038)
+Train: 4 [ 750/1251 ( 60%)]  Loss: 6.072 (6.11)  Time: 0.172s, 5945.97/s  (0.192s, 5333.58/s)  LR: 8.002e-04  Data: 0.032 (0.037)
+Train: 4 [ 800/1251 ( 64%)]  Loss: 5.863 (6.09)  Time: 0.198s, 5182.72/s  (0.192s, 5322.56/s)  LR: 8.002e-04  Data: 0.024 (0.037)
+Train: 4 [ 850/1251 ( 68%)]  Loss: 5.845 (6.08)  Time: 0.170s, 6036.96/s  (0.192s, 5334.39/s)  LR: 8.002e-04  Data: 0.028 (0.036)
+Train: 4 [ 900/1251 ( 72%)]  Loss: 5.910 (6.07)  Time: 0.172s, 5942.15/s  (0.192s, 5323.23/s)  LR: 8.002e-04  Data: 0.022 (0.035)
+Train: 4 [ 950/1251 ( 76%)]  Loss: 5.982 (6.06)  Time: 0.178s, 5740.15/s  (0.192s, 5330.27/s)  LR: 8.002e-04  Data: 0.037 (0.035)
+Train: 4 [1000/1251 ( 80%)]  Loss: 6.020 (6.06)  Time: 0.174s, 5890.28/s  (0.192s, 5326.43/s)  LR: 8.002e-04  Data: 0.025 (0.035)
+Train: 4 [1050/1251 ( 84%)]  Loss: 5.925 (6.06)  Time: 0.331s, 3091.36/s  (0.192s, 5323.34/s)  LR: 8.002e-04  Data: 0.025 (0.034)
+Train: 4 [1100/1251 ( 88%)]  Loss: 5.946 (6.05)  Time: 0.183s, 5594.82/s  (0.192s, 5325.91/s)  LR: 8.002e-04  Data: 0.021 (0.034)
+Train: 4 [1150/1251 ( 92%)]  Loss: 5.643 (6.03)  Time: 0.167s, 6146.75/s  (0.192s, 5322.64/s)  LR: 8.002e-04  Data: 0.031 (0.034)
+Train: 4 [1200/1251 ( 96%)]  Loss: 6.082 (6.04)  Time: 0.182s, 5611.67/s  (0.193s, 5316.95/s)  LR: 8.002e-04  Data: 0.026 (0.033)
+Train: 4 [1250/1251 (100%)]  Loss: 5.823 (6.03)  Time: 0.113s, 9039.03/s  (0.192s, 5322.59/s)  LR: 8.002e-04  Data: 0.000 (0.033)
+Distributing BatchNorm running means and vars
+Test: [   0/48]  Time: 1.778 (1.778)  Loss:  3.4774 (3.4774)  Acc@1: 30.0781 (30.0781)  Acc@5: 58.5938 (58.5938)
+Test: [  48/48]  Time: 0.019 (0.215)  Loss:  3.1454 (4.1957)  Acc@1: 42.2170 (19.4860)  Acc@5: 62.9717 (41.2960)
+Current checkpoints:
+ ('./output/train/20220223-153746-mobilenetv2_100-224/checkpoint-4.pth.tar', 19.486000045166016)
+ ('./output/train/20220223-153746-mobilenetv2_100-224/checkpoint-3.pth.tar', 13.648000068359375)
+ ('./output/train/20220223-153746-mobilenetv2_100-224/checkpoint-2.pth.tar', 7.044000001220703)
+ ('./output/train/20220223-153746-mobilenetv2_100-224/checkpoint-1.pth.tar', 2.526000012512207)
+ ('./output/train/20220223-153746-mobilenetv2_100-224/checkpoint-0.pth.tar', 0.0979999999666214)
+
+Train: 5 [   0/1251 (  0%)]  Loss: 5.830 (5.83)  Time: 1.838s,  557.14/s  (1.838s,  557.14/s)  LR: 9.993e-04  Data: 1.721 (1.721)
+Train: 5 [  50/1251 (  4%)]  Loss: 6.059 (5.94)  Time: 0.160s, 6418.27/s  (0.223s, 4589.01/s)  LR: 9.993e-04  Data: 0.028 (0.076)
+Train: 5 [ 100/1251 (  8%)]  Loss: 5.874 (5.92)  Time: 0.165s, 6187.58/s  (0.203s, 5048.16/s)  LR: 9.993e-04  Data: 0.022 (0.055)
+Train: 5 [ 150/1251 ( 12%)]  Loss: 6.002 (5.94)  Time: 0.160s, 6385.13/s  (0.200s, 5130.37/s)  LR: 9.993e-04  Data: 0.028 (0.051)
+Train: 5 [ 200/1251 ( 16%)]  Loss: 6.004 (5.95)  Time: 0.457s, 2241.75/s  (0.200s, 5121.54/s)  LR: 9.993e-04  Data: 0.026 (0.048)
+Train: 5 [ 250/1251 ( 20%)]  Loss: 5.780 (5.92)  Time: 0.167s, 6145.62/s  (0.196s, 5224.15/s)  LR: 9.993e-04  Data: 0.026 (0.044)
+Train: 5 [ 300/1251 ( 24%)]  Loss: 6.019 (5.94)  Time: 0.186s, 5501.64/s  (0.194s, 5266.98/s)  LR: 9.993e-04  Data: 0.025 (0.041)
+Train: 5 [ 350/1251 ( 28%)]  Loss: 5.993 (5.95)  Time: 0.161s, 6367.02/s  (0.195s, 5243.34/s)  LR: 9.993e-04  Data: 0.026 (0.039)
+Train: 5 [ 400/1251 ( 32%)]  Loss: 5.939 (5.94)  Time: 0.155s, 6618.56/s  (0.194s, 5276.43/s)  LR: 9.993e-04  Data: 0.024 (0.037)
+Train: 5 [ 450/1251 ( 36%)]  Loss: 5.669 (5.92)  Time: 0.193s, 5299.80/s  (0.193s, 5305.11/s)  LR: 9.993e-04  Data: 0.026 (0.036)
+Train: 5 [ 500/1251 ( 40%)]  Loss: 6.091 (5.93)  Time: 0.166s, 6184.77/s  (0.193s, 5303.43/s)  LR: 9.993e-04  Data: 0.035 (0.035)
+Train: 5 [ 550/1251 ( 44%)]  Loss: 6.045 (5.94)  Time: 0.169s, 6056.19/s  (0.193s, 5313.37/s)  LR: 9.993e-04  Data: 0.024 (0.035)
