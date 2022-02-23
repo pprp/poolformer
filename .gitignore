@@ -1,3 +1,8 @@
 *.pth.tar
 *.pyc
 output/* 
+*.csv
+*.yaml 
+args.*
+*.log
+*.out

@@ -30,13 +30,16 @@ import torch.nn.functional as F
 
 
 from timm.data import IMAGENET_DEFAULT_MEAN, IMAGENET_DEFAULT_STD, IMAGENET_INCEPTION_MEAN, IMAGENET_INCEPTION_STD
-from timm.models.efficientnet_blocks import SqueezeExcite
-from timm.models.efficientnet_builder import EfficientNetBuilder, decode_arch_def, efficientnet_init_weights,\
+from .utils.efficientnet_blocks import SqueezeExcite
+from .utils.efficientnet_builder import EfficientNetBuilder, decode_arch_def, efficientnet_init_weights,\
     round_channels, resolve_bn_args, resolve_act_layer, BN_EPS_TF_DEFAULT
+    
 from timm.models.features import FeatureInfo, FeatureHooks
 from timm.models.helpers import build_model_with_cfg, default_cfg_for_features
 from timm.models.layers import create_conv2d, create_classifier
 from timm.models.registry import register_model
+
+
 
 __all__ = ['EfficientNet', 'EfficientNetFeatures']
 
@@ -184,7 +187,7 @@ class EfficientNetFeatures(nn.Module):
             self.feature_hooks = FeatureHooks(hooks, self.named_modules())
 
     def forward(self, x) -> List[torch.Tensor]:
-        x = self.conv_stem(x)
+        x = self.conv_stem(x) # stem
         x = self.bn1(x)
         x = self.act1(x)
         if self.feature_hooks is None:
@@ -197,11 +200,15 @@ class EfficientNetFeatures(nn.Module):
                     features.append(x)
             return features
         else:
-            self.blocks(x)
+            self.blocks(x) # body
             out = self.feature_hooks.get_output(x.device)
             return list(out.values())
 
 def _create_effnet(variant, pretrained=False, **kwargs):
+    '''
+    variant: mobilenetv2_100
+    kwargs: dict_keys(['block_args', 'num_features', 'stem_size', 'fix_stem', 'round_chs_fn', 'norm_layer', 'act_layer'])
+    '''
     features_only = False
     model_cls = EfficientNet
     kwargs_filter = None
@@ -225,15 +232,30 @@ def _gen_mobilenet_v2(
     """ Generate MobileNet-V2 network
     Ref impl: https://github.com/tensorflow/models/blob/master/research/slim/nets/mobilenet/mobilenet_v2.py
     Paper: https://arxiv.org/abs/1801.04381
+        k:kernel 
+        s: stride 
+        c: outchannels 
+        e:exp ratio 
+        r: repeat 
     """
+    # arch_def = [
+    #     ['ds_r1_k3_s1_c16'],
+    #     ['ir_r2_k3_s2_e6_c24'],
+    #     ['ir_r3_k3_s2_e6_c32'],
+    #     ['ir_r4_k3_s2_e6_c64'],
+    #     ['ir_r3_k3_s1_e6_c96'],
+    #     ['ir_r3_k3_s2_e6_c160'],
+    #     ['ir_r1_k3_s1_e6_c320'],
+    # ]
+    print("mobilenetv2 line 247 arch_def")
     arch_def = [
         ['ds_r1_k3_s1_c16'],
-        ['ir_r2_k3_s2_e6_c24'],
-        ['ir_r3_k3_s2_e6_c32'],
-        ['ir_r4_k3_s2_e6_c64'],
-        ['ir_r3_k3_s1_e6_c96'],
-        ['ir_r3_k3_s2_e6_c160'],
-        ['ir_r1_k3_s1_e6_c320'],
+        ['irrf_r2_k3_s2_e6_c24'],
+        ['irrf_r3_k3_s2_e6_c32'],
+        ['irrf_r4_k3_s2_e6_c64'],
+        ['irrf_r3_k3_s1_e6_c96'],
+        ['irrf_r3_k3_s2_e6_c160'],
+        ['irrf_r1_k3_s1_e6_c320'],
     ]
     round_chs_fn = partial(round_channels, multiplier=channel_multiplier)
     model_kwargs = dict(
@@ -250,8 +272,9 @@ def _gen_mobilenet_v2(
     return model
 
 @register_model
-def mobilenetv2_100(pretrained=False, **kwargs):
+def mobilenetv2_rf_100(pretrained=False, **kwargs):
     """ MobileNet V2 w/ 1.0 channel multiplier """
+    print("mobilenetv2.py line 274: gen_mobilenet_v2")
     model = _gen_mobilenet_v2('mobilenetv2_100', 1.0, pretrained=pretrained, **kwargs)
     return model
 
@@ -278,3 +301,9 @@ def mobilenetv2_120d(pretrained=False, **kwargs):
         'mobilenetv2_120d', 1.2, depth_multiplier=1.4, fix_stem_head=True, pretrained=pretrained, **kwargs)
     return model
 
+if __name__ == "__main__":
+    m = mobilenetv2_100()
+
+    i = torch.zeros(4,3,224,224)
+
+    print(m(i).shape)
