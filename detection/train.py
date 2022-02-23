@@ -4,6 +4,12 @@ import os
 import os.path as osp
 import time
 import warnings
+import sys
+sys.path.append('./')
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "."))
+
+import mmcv_custom.runner.epoch_based_runner
+import mmcv_custom.runner.optimizer
 
 import mmcv
 import torch
@@ -17,11 +23,10 @@ from mmdet_custom.apis.train import train_detector
 from mmdet.datasets import build_dataset
 from mmdet.models import build_detector
 from mmdet.utils import collect_env, get_root_logger
-import mmcv_custom.runner.epoch_based_runner
-import mmcv_custom.runner.optimizer
 
-import sys
 sys.path.append('../')
+
+
 import models
 
 def parse_args():
