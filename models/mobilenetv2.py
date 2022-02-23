@@ -40,10 +40,6 @@ from timm.models.layers import create_conv2d, create_classifier
 from timm.models.registry import register_model
 
 
-
-__all__ = ['EfficientNet', 'EfficientNetFeatures']
-
-
 def _cfg(url='', **kwargs):
     return {
         'url': url, 'num_classes': 1000, 'input_size': (3, 224, 224), 'pool_size': (7, 7),
@@ -250,12 +246,12 @@ def _gen_mobilenet_v2(
     print("mobilenetv2 line 247 arch_def")
     arch_def = [
         ['ds_r1_k3_s1_c16'],
-        ['irrf_r2_k3_s2_e6_c24'],
-        ['irrf_r3_k3_s2_e6_c32'],
-        ['irrf_r4_k3_s2_e6_c64'],
-        ['irrf_r3_k3_s1_e6_c96'],
-        ['irrf_r3_k3_s2_e6_c160'],
-        ['irrf_r1_k3_s1_e6_c320'],
+        ['rf_r2_k3_s2_e6_c24'],
+        ['rf_r3_k3_s2_e6_c32'],
+        ['rf_r4_k3_s2_e6_c64'],
+        ['rf_r3_k3_s1_e6_c96'],
+        ['rf_r3_k3_s2_e6_c160'],
+        ['rf_r1_k3_s1_e6_c320'],
     ]
     round_chs_fn = partial(round_channels, multiplier=channel_multiplier)
     model_kwargs = dict(

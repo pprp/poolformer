@@ -10,8 +10,8 @@ import torch
 import torch.nn as nn
 from torch.nn import functional as F
 
-from .layers import create_conv2d, drop_path, make_divisible, create_act_layer
-from .layers.activations import sigmoid
+from timm.models.layers import create_conv2d, drop_path, make_divisible, create_act_layer
+from timm.models.layers.activations import sigmoid
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 

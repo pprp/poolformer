@@ -17,7 +17,7 @@ from functools import partial
 import torch.nn as nn
 
 from .efficientnet_blocks import *
-from .layers import (CondConv2d, get_act_layer, get_attn,
+from timm.models.layers import (CondConv2d, get_act_layer, get_attn,
                      get_condconv_initializer, make_divisible)
 
 
@@ -104,7 +104,7 @@ def _decode_block_str(block_str):
         ValueError: if the string def not properly specified (TODO)
     """
     assert isinstance(block_str, str)
-    ops = block_str.split('_')
+    ops = block_str.split('_') # rf r2 k3 s1 c16
     block_type = ops[0]  # take the block type off the front
     ops = ops[1:]
     options = {}
@@ -138,6 +138,8 @@ def _decode_block_str(block_str):
             if len(splits) >= 2:
                 key, value = splits[:2]
                 options[key] = value
+    
+    print("line 142: options -> ", options, "block type -> ", block_type)
 
     # if act_layer is None, the model default (passed to model init) will be used
     act_layer = options['n'] if 'n' in options else None
@@ -147,7 +149,7 @@ def _decode_block_str(block_str):
 
     num_repeat = int(options['r'])
     # each type of block has different valid arguments, fill accordingly
-    if block_type == 'ir':
+    if block_type in ['ir' , 'rf']:
         block_args = dict(
             block_type=block_type,
             dw_kernel_size=_parse_ksize(options['k']),
@@ -337,7 +339,7 @@ class EfficientNetBuilder:
         elif bt == 'cn':
             _log_info_if('  ConvBnAct {}, Args: {}'.format(block_idx, str(ba)), self.verbose)
             block = ConvBnAct(**ba)
-        elif bt == 'irrf':
+        elif bt == 'rf':
             _log_info_if('  InvertedResidualReceptiveField {}, Args: {}'.format(block_idx, str(ba)), self.verbose)
             block = InvertedResidualRF(**ba)
         else:
@@ -461,11 +463,13 @@ def _init_weight_goog(m, n='', fix_group_fanout=True):
             fan_in = m.weight.size(1)
         init_range = 1.0 / math.sqrt(fan_in + fan_out)
         nn.init.uniform_(m.weight, -init_range, init_range)
-        nn.init.zeros_(m.bias)
+        # nn.init.zeros_(m.bias)
+    
 
 
 def efficientnet_init_weights(model: nn.Module, init_fn=None):
     init_fn = init_fn or _init_weight_goog
     for n, m in model.named_modules():
+        # print("linear" if isinstance(m, nn.Linear) else "None")
         init_fn(m, n)
 

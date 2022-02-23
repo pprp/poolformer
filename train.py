@@ -39,6 +39,7 @@ from timm.utils import ApexScaler, NativeScaler
 
 import models
 
+
 try:
     from apex import amp
     from apex.parallel import DistributedDataParallel as ApexDDP

@@ -1,3 +1,211 @@
+mobilenetv2.py line 274: gen_mobilenet_v2mobilenetv2.py line 274: gen_mobilenet_v2mobilenetv2.py line 274: gen_mobilenet_v2mobilenetv2.py line 274: gen_mobilenet_v2mobilenetv2.py line 274: gen_mobilenet_v2mobilenetv2.py line 274: gen_mobilenet_v2mobilenetv2.py line 274: gen_mobilenet_v2
+
+
+
+
+
+mobilenetv2 line 247 arch_def
+mobilenetv2 line 247 arch_defmobilenetv2.py line 274: gen_mobilenet_v2mobilenetv2 line 247 arch_defmobilenetv2 line 247 arch_defmobilenetv2 line 247 arch_def
+mobilenetv2 line 247 arch_defmobilenetv2 line 247 arch_def
+
+
+
+
+
+
+mobilenetv2 line 247 arch_def
+line 142: options ->  {'r': '1', 'k': '3', 's': '1', 'c': '16'} block type ->  dsline 142: options -> line 142: options -> line 142: options -> 
+line 142: options ->     line 142: options -> line 142: options -> {'r': '1', 'k': '3', 's': '1', 'c': '16'}{'r': '1', 'k': '3', 's': '1', 'c': '16'} {'r': '1', 'k': '3', 's': '1', 'c': '16'} {'r': '1', 'k': '3', 's': '1', 'c': '16'}line 142: options ->  block type ->    block type -> {'r': '1', 'k': '3', 's': '1', 'c': '16'}   dsblock type -> 
+block type -> ds block type -> 
+ ds ds{'r': '1', 'k': '3', 's': '1', 'c': '16'}
+ ds
+ 
+block type -> {'r': '1', 'k': '3', 's': '1', 'c': '16'} ds 
+block type ->  ds
+line 142: options ->  {'r': '2', 'k': '3', 's': '2', 'e': '6', 'c': '24'} block type ->  rf
+line 142: options -> line 142: options ->  line 142: options ->  line 142: options ->  line 142: options ->  {'r': '2', 'k': '3', 's': '2', 'e': '6', 'c': '24'}{'r': '2', 'k': '3', 's': '2', 'e': '6', 'c': '24'} {'r': '2', 'k': '3', 's': '2', 'e': '6', 'c': '24'}  {'r': '2', 'k': '3', 's': '2', 'e': '6', 'c': '24'}block type -> {'r': '2', 'k': '3', 's': '2', 'e': '6', 'c': '24'}block type ->     block type ->  block type -> rfblock type -> rf  line 142: options -> 
+rfrf
+ 
+
+line 142: options ->  {'r': '2', 'k': '3', 's': '2', 'e': '6', 'c': '24'}{'r': '2', 'k': '3', 's': '2', 'e': '6', 'c': '24'}  block type -> line 142: options -> block type ->     rfrf{'r': '3', 'k': '3', 's': '2', 'e': '6', 'c': '32'}rf
+
+ 
+block type ->  rf
+line 142: options ->  line 142: options -> {'r': '3', 'k': '3', 's': '2', 'e': '6', 'c': '32'}  block type -> line 142: options -> {'r': '3', 'k': '3', 's': '2', 'e': '6', 'c': '32'}   line 142: options -> rfblock type ->  {'r': '3', 'k': '3', 's': '2', 'e': '6', 'c': '32'}
+  rf{'r': '3', 'k': '3', 's': '2', 'e': '6', 'c': '32'}block type -> 
+  block type -> rf 
+rf
+line 142: options -> line 142: options ->  line 142: options ->   {'r': '3', 'k': '3', 's': '2', 'e': '6', 'c': '32'}{'r': '3', 'k': '3', 's': '2', 'e': '6', 'c': '32'} {'r': '3', 'k': '3', 's': '2', 'e': '6', 'c': '32'} block type -> line 142: options ->  block type ->   block type ->  rf{'r': '4', 'k': '3', 's': '2', 'e': '6', 'c': '64'}rf 
+
+ rfblock type -> 
+ rf
+line 142: options ->  {'r': '4', 'k': '3', 's': '2', 'e': '6', 'c': '64'}line 142: options ->  block type -> line 142: options ->   rf
+{'r': '4', 'k': '3', 's': '2', 'e': '6', 'c': '64'}line 142: options ->   block type ->   {'r': '4', 'k': '3', 's': '2', 'e': '6', 'c': '64'}rf{'r': '4', 'k': '3', 's': '2', 'e': '6', 'c': '64'} 
+block type ->  block type ->   rfrf
+
+line 142: options -> line 142: options -> line 142: options ->    {'r': '4', 'k': '3', 's': '2', 'e': '6', 'c': '64'}{'r': '4', 'k': '3', 's': '2', 'e': '6', 'c': '64'}{'r': '4', 'k': '3', 's': '2', 'e': '6', 'c': '64'}   block type -> block type -> block type ->    rfline 142: options -> rfrf
+ 
+
+{'r': '3', 'k': '3', 's': '1', 'e': '6', 'c': '96'} block type ->  rfline 142: options -> 
+ {'r': '3', 'k': '3', 's': '1', 'e': '6', 'c': '96'} block type ->  rf
+line 142: options ->  {'r': '3', 'k': '3', 's': '1', 'e': '6', 'c': '96'} line 142: options -> block type -> line 142: options ->    rf{'r': '3', 'k': '3', 's': '1', 'e': '6', 'c': '96'}
+{'r': '3', 'k': '3', 's': '1', 'e': '6', 'c': '96'}  block type -> block type ->   rfrf
+
+line 142: options -> line 142: options -> line 142: options ->  line 142: options ->   {'r': '3', 'k': '3', 's': '1', 'e': '6', 'c': '96'} line 142: options -> {'r': '3', 'k': '3', 's': '2', 'e': '6', 'c': '160'} {'r': '3', 'k': '3', 's': '1', 'e': '6', 'c': '96'}block type ->  {'r': '3', 'k': '3', 's': '2', 'e': '6', 'c': '160'}    block type -> line 142: options -> {'r': '3', 'k': '3', 's': '1', 'e': '6', 'c': '96'}rf 
+line 142: options -> line 142: options -> rfblock type ->   
+   {'r': '3', 'k': '3', 's': '2', 'e': '6', 'c': '160'}{'r': '3', 'k': '3', 's': '2', 'e': '6', 'c': '160'}block type -> {'r': '3', 'k': '3', 's': '2', 'e': '6', 'c': '160'}rf    block type -> 
+block type -> block type ->   rfrf
+rf
+ rf
+
+block type ->  rf
+line 142: options -> line 142: options ->   {'r': '3', 'k': '3', 's': '2', 'e': '6', 'c': '160'}{'r': '3', 'k': '3', 's': '2', 'e': '6', 'c': '160'} line 142: options ->  block type ->  block type ->  line 142: options -> line 142: options ->   {'r': '1', 'k': '3', 's': '1', 'e': '6', 'c': '320'}line 142: options -> rf rf  {'r': '3', 'k': '3', 's': '2', 'e': '6', 'c': '160'}block type ->  line 142: options -> 
+{'r': '1', 'k': '3', 's': '1', 'e': '6', 'c': '320'}{'r': '1', 'k': '3', 's': '1', 'e': '6', 'c': '320'}block type -> line 142: options ->      block type -> rf{'r': '1', 'k': '3', 's': '1', 'e': '6', 'c': '320'} rf{'r': '1', 'k': '3', 's': '1', 'e': '6', 'c': '320'}
+
+rf  
+block type -> block type ->   rfrf
+
+
+ block type ->  rf
+line 142: options ->  line 142: options -> {'r': '1', 'k': '3', 's': '1', 'e': '6', 'c': '320'}  block type -> {'r': '1', 'k': '3', 's': '1', 'e': '6', 'c': '320'}  rf
+line 142: options -> block type ->   rf{'r': '1', 'k': '3', 's': '1', 'e': '6', 'c': '320'}
+ block type ->  rf
+block type is dsblock type is ds
+
+block type is ds
+block type is ds
+block type is ds
+block type is ds
+block type is ds
+block type is ds
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rfblock type is rf
+
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rfblock type is rf
+
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
+block type is rf
 Selected optimization level O1:  Insert automatic casts around Pytorch functions and Tensor methods.
 
 Defaults for this optimization level are:
@@ -17,180 +225,7 @@ patch_torch_functions  : True
 keep_batchnorm_fp32    : None
 master_weights         : None
 loss_scale             : dynamic
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 32768.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 32768.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 32768.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 32768.0
-
-
-
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 32768.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 32768.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 32768.0
-
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 32768.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0
-
-
-
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0
-
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0
-
-
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 32768.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 32768.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 32768.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 32768.0
-
-
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 32768.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 32768.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 32768.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 32768.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0
-
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 32768.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 32768.0
-
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 32768.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 32768.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 32768.0
-
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 32768.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 32768.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 32768.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0
-
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0
-
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0
-
-
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-
-
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-
-
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-
-
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-
-
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
 Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
 Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
 Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
@@ -198,206 +233,3 @@ Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
 Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
 Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
 
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-
-
-
-
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-
-
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-
-
-
-
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-
-
-
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-
-
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-
-
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-
-
-
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-
-
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-
-
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
-Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
