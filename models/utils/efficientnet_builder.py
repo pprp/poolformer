@@ -139,8 +139,6 @@ def _decode_block_str(block_str):
                 key, value = splits[:2]
                 options[key] = value
     
-    print("line 142: options -> ", options, "block type -> ", block_type)
-
     # if act_layer is None, the model default (passed to model init) will be used
     act_layer = options['n'] if 'n' in options else None
     exp_kernel_size = _parse_ksize(options['a']) if 'a' in options else 1
@@ -326,7 +324,6 @@ class EfficientNetBuilder:
                     ba['se_layer'] = partial(self.se_layer, rd_ratio=se_ratio)
                 else:
                     ba['se_layer'] = self.se_layer
-        print(f"block type is {bt}")
         if bt == 'ir':
             _log_info_if('  InvertedResidual {}, Args: {}'.format(block_idx, str(ba)), self.verbose)
             block = CondConvResidual(**ba) if ba.get('num_experts', 0) else InvertedResidual(**ba)

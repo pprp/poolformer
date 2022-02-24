@@ -243,7 +243,7 @@ def _gen_mobilenet_v2(
     #     ['ir_r3_k3_s2_e6_c160'],
     #     ['ir_r1_k3_s1_e6_c320'],
     # ]
-    print("mobilenetv2 line 247 arch_def")
+
     arch_def = [
         ['ds_r1_k3_s1_c16'],
         ['rf_r2_k3_s2_e6_c24'],

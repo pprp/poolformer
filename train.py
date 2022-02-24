@@ -388,8 +388,7 @@ def main():
         args.num_classes = model.num_classes  # FIXME handle model default vs config num_classes more elegantly
 
     if args.local_rank == 0:
-        _logger.info(
-            f'Model {safe_model_name(args.model)} created, param count:{sum([m.numel() for m in model.parameters()])}')
+        _logger.info(f'Model {safe_model_name(args.model)} created, param count:{sum([m.numel() for m in model.parameters()])}')
 
     data_config = resolve_data_config(vars(args), model=model, verbose=args.local_rank == 0)
 
