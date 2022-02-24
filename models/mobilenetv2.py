@@ -223,7 +223,7 @@ def _create_effnet(variant, pretrained=False, **kwargs):
         model.default_cfg = default_cfg_for_features(model.default_cfg)
     return model
 
-def _gen_mobilenet_v2(
+def _gen_rf_mobilenet_v2(
         variant, channel_multiplier=1.0, depth_multiplier=1.0, fix_stem_head=False, pretrained=False, **kwargs):
     """ Generate MobileNet-V2 network
     Ref impl: https://github.com/tensorflow/models/blob/master/research/slim/nets/mobilenet/mobilenet_v2.py
@@ -234,16 +234,6 @@ def _gen_mobilenet_v2(
         e:exp ratio 
         r: repeat 
     """
-    # arch_def = [
-    #     ['ds_r1_k3_s1_c16'],
-    #     ['ir_r2_k3_s2_e6_c24'],
-    #     ['ir_r3_k3_s2_e6_c32'],
-    #     ['ir_r4_k3_s2_e6_c64'],
-    #     ['ir_r3_k3_s1_e6_c96'],
-    #     ['ir_r3_k3_s2_e6_c160'],
-    #     ['ir_r1_k3_s1_e6_c320'],
-    # ]
-
     arch_def = [
         ['ds_r1_k3_s1_c16'],
         ['rf_r2_k3_s2_e6_c24'],
@@ -267,13 +257,56 @@ def _gen_mobilenet_v2(
     model = _create_effnet(variant, pretrained, **model_kwargs)
     return model
 
+def _gen_mobilenet_v2(
+        variant, channel_multiplier=1.0, depth_multiplier=1.0, fix_stem_head=False, pretrained=False, **kwargs):
+    """ Generate MobileNet-V2 network
+    Ref impl: https://github.com/tensorflow/models/blob/master/research/slim/nets/mobilenet/mobilenet_v2.py
+    Paper: https://arxiv.org/abs/1801.04381
+        k:kernel 
+        s: stride 
+        c: outchannels 
+        e:exp ratio 
+        r: repeat 
+    """
+    arch_def = [
+        ['ds_r1_k3_s1_c16'],
+        ['ir_r2_k3_s2_e6_c24'],
+        ['ir_r3_k3_s2_e6_c32'],
+        ['ir_r4_k3_s2_e6_c64'],
+        ['ir_r3_k3_s1_e6_c96'],
+        ['ir_r3_k3_s2_e6_c160'],
+        ['ir_r1_k3_s1_e6_c320'],
+    ]
+
+   
+    round_chs_fn = partial(round_channels, multiplier=channel_multiplier)
+    model_kwargs = dict(
+        block_args=decode_arch_def(arch_def, depth_multiplier=depth_multiplier, fix_first_last=fix_stem_head),
+        num_features=1280 if fix_stem_head else round_chs_fn(1280),
+        stem_size=32,
+        fix_stem=fix_stem_head,
+        round_chs_fn=round_chs_fn,
+        norm_layer=partial(nn.BatchNorm2d, **resolve_bn_args(kwargs)),
+        act_layer=resolve_act_layer(kwargs, 'relu6'),
+        **kwargs
+    )
+    model = _create_effnet(variant, pretrained, **model_kwargs)
+    return model
+
 @register_model
-def mobilenetv2_rf_100(pretrained=False, **kwargs):
+def mobilenetv2_100(pretrained=False, **kwargs):
     """ MobileNet V2 w/ 1.0 channel multiplier """
     print("mobilenetv2.py line 274: gen_mobilenet_v2")
     model = _gen_mobilenet_v2('mobilenetv2_100', 1.0, pretrained=pretrained, **kwargs)
     return model
 
+
+@register_model
+def mobilenetv2_rf_100(pretrained=False, **kwargs):
+    """ MobileNet V2 w/ 1.0 channel multiplier """
+    print("mobilenetv2.py line 274: gen_mobilenet_v2")
+    model = _gen_rf_mobilenet_v2('mobilenetv2_100', 1.0, pretrained=pretrained, **kwargs)
+    return model
 
 @register_model
 def mobilenetv2_140(pretrained=False, **kwargs):
