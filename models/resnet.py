@@ -1007,6 +1007,7 @@ def _create_resnet(variant, pretrained=False, **kwargs):
 def resnet18(pretrained=False, **kwargs):
     """Constructs a ResNet-18 model.
     """
+    print("current attention is None")
     model_args = dict(block=BasicBlock, layers=[2, 2, 2, 2], **kwargs)
     return _create_resnet('resnet18', pretrained, **model_args)
 
@@ -1014,6 +1015,7 @@ def resnet18(pretrained=False, **kwargs):
 def resnet18_rf(pretrained=False, **kwargs):
     """Constructs a ResNet-18 model.
     """
+    print("current attention is rf")
     model_args = dict(block=RFBasicBlock, layers=[2, 2, 2, 2], **kwargs)
     return _create_resnet('resnet18', pretrained, **model_args)
 
@@ -1021,6 +1023,7 @@ def resnet18_rf(pretrained=False, **kwargs):
 def resnet18_rfsa(pretrained=False, **kwargs):
     """Constructs a ResNet-18 model.
     """
+    print("current attention is rfsa")
     model_args = dict(block=RFSABasicBlock, layers=[2, 2, 2, 2], **kwargs)
     return _create_resnet('resnet18', pretrained, **model_args)
 

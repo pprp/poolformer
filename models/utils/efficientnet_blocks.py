@@ -254,7 +254,7 @@ class InvertedResidualRF(nn.Module):
         self.bn3 = norm_layer(out_chs)
 
         self.attention = ReceptiveFieldAttention(
-            out_chs, genotype=Genotype(normal=[('max_pool_3x3', 0), ('max_pool_3x3', 0), ('max_pool_5x5', 1), ('max_pool_3x3', 0), ('noise', 2), ('noise', 1)], normal_concat=range(0, 4))
+            out_chs, genotype=Genotype(normal=[('strippool', 0), ('avg_pool_3x3', 0), ('avg_pool_5x5', 1), ('avg_pool_7x7', 0), ('strippool', 2), ('noise', 1)], normal_concat=range(0, 4))
         )
 
     def feature_info(self, location):

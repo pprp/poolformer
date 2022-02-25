@@ -21,6 +21,8 @@ by Mingxing Tan, Quoc Le, and other members of their Google Brain team. Thanks f
 the models and weights open source!
 Hacked together by / Copyright 2021 Ross Wightman
 """
+import os 
+import sys 
 from functools import partial
 from typing import List
 
@@ -39,6 +41,9 @@ from timm.models.helpers import build_model_with_cfg, default_cfg_for_features
 from timm.models.layers import create_conv2d, create_classifier
 from timm.models.registry import register_model
 
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
+
+from autorf.components import Attention, ReceptiveFieldAttention, ReceptiveFieldSelfAttention
 
 def _cfg(url='', **kwargs):
     return {
@@ -77,8 +82,10 @@ class EfficientNet(nn.Module):
 
     def __init__(self, block_args, num_classes=1000, num_features=1280, in_chans=3, stem_size=32, fix_stem=False,
                  output_stride=32, pad_type='', round_chs_fn=round_channels, act_layer=None, norm_layer=None,
-                 se_layer=None, drop_rate=0., drop_path_rate=0., global_pool='avg'):
+                 se_layer=None, drop_rate=0., drop_path_rate=0., global_pool='avg', attention='rf'): # rf or rfsa or None 
         super(EfficientNet, self).__init__()
+        
+        print("current attention type is : ", attention)
         act_layer = act_layer or nn.ReLU
         norm_layer = norm_layer or nn.BatchNorm2d
         se_layer = se_layer or SqueezeExcite
@@ -92,11 +99,19 @@ class EfficientNet(nn.Module):
         self.conv_stem = create_conv2d(in_chans, stem_size, 3, stride=2, padding=pad_type)
         self.bn1 = norm_layer(stem_size)
         self.act1 = act_layer(inplace=True)
+        
+        if attention == None:
+            att = None 
+        elif attention == "rf":
+            att = ReceptiveFieldAttention
+        elif attention == "rfsa":
+            att = ReceptiveFieldSelfAttention
 
         # Middle stages (IR/ER/DS Blocks)
         builder = EfficientNetBuilder(
             output_stride=output_stride, pad_type=pad_type, round_chs_fn=round_chs_fn,
-            act_layer=act_layer, norm_layer=norm_layer, se_layer=se_layer, drop_path_rate=drop_path_rate)
+            act_layer=act_layer, norm_layer=norm_layer, se_layer=se_layer, drop_path_rate=drop_path_rate, attention=att)
+        
         self.blocks = nn.Sequential(*builder(stem_size, block_args))
         self.feature_info = builder.features
         head_chs = builder.in_chs
@@ -151,7 +166,7 @@ class EfficientNetFeatures(nn.Module):
 
     def __init__(self, block_args, out_indices=(0, 1, 2, 3, 4), feature_location='bottleneck', in_chans=3,
                  stem_size=32, fix_stem=False, output_stride=32, pad_type='', round_chs_fn=round_channels,
-                 act_layer=None, norm_layer=None, se_layer=None, drop_rate=0., drop_path_rate=0.):
+                 act_layer=None, norm_layer=None, se_layer=None, drop_rate=0., drop_path_rate=0., attention='rf'): # rf or rfsa 
         super(EfficientNetFeatures, self).__init__()
         act_layer = act_layer or nn.ReLU
         norm_layer = norm_layer or nn.BatchNorm2d
@@ -164,12 +179,19 @@ class EfficientNetFeatures(nn.Module):
         self.conv_stem = create_conv2d(in_chans, stem_size, 3, stride=2, padding=pad_type)
         self.bn1 = norm_layer(stem_size)
         self.act1 = act_layer(inplace=True)
+        
+        if attention == None:
+            att = None 
+        elif attention == "rf":
+            att = ReceptiveFieldAttention
+        elif attention == "rfsa":
+            att = ReceptiveFieldSelfAttention
 
         # Middle stages (IR/ER/DS Blocks)
         builder = EfficientNetBuilder(
             output_stride=output_stride, pad_type=pad_type, round_chs_fn=round_chs_fn,
             act_layer=act_layer, norm_layer=norm_layer, se_layer=se_layer, drop_path_rate=drop_path_rate,
-            feature_location=feature_location)
+            feature_location=feature_location, attention=att)
         self.blocks = nn.Sequential(*builder(stem_size, block_args))
         self.feature_info = FeatureInfo(builder.features, out_indices)
         self._stage_out_idx = {v['stage']: i for i, v in enumerate(self.feature_info) if i in out_indices}
@@ -204,6 +226,7 @@ def _create_effnet(variant, pretrained=False, **kwargs):
     '''
     variant: mobilenetv2_100
     kwargs: dict_keys(['block_args', 'num_features', 'stem_size', 'fix_stem', 'round_chs_fn', 'norm_layer', 'act_layer'])
+    attention: rf rfsa None
     '''
     features_only = False
     model_cls = EfficientNet
@@ -258,7 +281,7 @@ def _gen_rf_mobilenet_v2(
     return model
 
 def _gen_mobilenet_v2(
-        variant, channel_multiplier=1.0, depth_multiplier=1.0, fix_stem_head=False, pretrained=False, **kwargs):
+        variant, channel_multiplier=1.0, depth_multiplier=1.0, fix_stem_head=False, pretrained=False, attention='rf', **kwargs):
     """ Generate MobileNet-V2 network
     Ref impl: https://github.com/tensorflow/models/blob/master/research/slim/nets/mobilenet/mobilenet_v2.py
     Paper: https://arxiv.org/abs/1801.04381
@@ -267,6 +290,7 @@ def _gen_mobilenet_v2(
         c: outchannels 
         e:exp ratio 
         r: repeat 
+        attention: rf ; rfsa ; None
     """
     arch_def = [
         ['ds_r1_k3_s1_c16'],
@@ -290,22 +314,26 @@ def _gen_mobilenet_v2(
         act_layer=resolve_act_layer(kwargs, 'relu6'),
         **kwargs
     )
-    model = _create_effnet(variant, pretrained, **model_kwargs)
+    model = _create_effnet(variant, pretrained, attention=attention,**model_kwargs)
     return model
 
 @register_model
 def mobilenetv2_100(pretrained=False, **kwargs):
     """ MobileNet V2 w/ 1.0 channel multiplier """
-    print("mobilenetv2.py line 274: gen_mobilenet_v2")
-    model = _gen_mobilenet_v2('mobilenetv2_100', 1.0, pretrained=pretrained, **kwargs)
+    model = _gen_mobilenet_v2('mobilenetv2_100', 1.0, pretrained=pretrained, attention=None, **kwargs)
     return model
 
 
 @register_model
 def mobilenetv2_rf_100(pretrained=False, **kwargs):
     """ MobileNet V2 w/ 1.0 channel multiplier """
-    print("mobilenetv2.py line 274: gen_mobilenet_v2")
-    model = _gen_rf_mobilenet_v2('mobilenetv2_100', 1.0, pretrained=pretrained, **kwargs)
+    model = _gen_mobilenet_v2('mobilenetv2_100', 1.0, pretrained=pretrained, attention="rf", **kwargs)
+    return model
+
+@register_model
+def mobilenetv2_rfsa_100(pretrained=False, **kwargs):
+    """ MobileNet V2 w/ 1.0 channel multiplier """
+    model = _gen_mobilenet_v2('mobilenetv2_100', 1.0, pretrained=pretrained, attention='rfsa', **kwargs)
     return model
 
 @register_model

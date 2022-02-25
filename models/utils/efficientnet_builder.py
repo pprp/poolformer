@@ -11,6 +11,8 @@ import math
 import os
 import re
 import sys
+from collections import namedtuple
+
 from copy import deepcopy
 from functools import partial
 
@@ -21,14 +23,19 @@ from timm.models.layers import (CondConv2d, get_act_layer, get_attn,
                      get_condconv_initializer, make_divisible)
 
 
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
+
+from autorf.components import ReceptiveFieldAttention, ReceptiveFieldSelfAttention
 
 __all__ = ["EfficientNetBuilder", "decode_arch_def", "efficientnet_init_weights",
            'resolve_bn_args', 'resolve_act_layer', 'round_channels', 'BN_MOMENTUM_TF_DEFAULT', 'BN_EPS_TF_DEFAULT']
 
 _logger = logging.getLogger(__name__)
 
+Genotype = namedtuple("Genotype", "normal normal_concat")
 
-_DEBUG_BUILDER = True
+
+_DEBUG_BUILDER = False
 
 # Defaults used for Google/Tensorflow training of mobile networks /w RMSprop as per
 # papers and TF reference implementations. PT momentum equiv for TF decay is (1 - TF decay)
@@ -147,7 +154,7 @@ def _decode_block_str(block_str):
 
     num_repeat = int(options['r'])
     # each type of block has different valid arguments, fill accordingly
-    if block_type in ['ir' , 'rf']:
+    if block_type == 'ir':
         block_args = dict(
             block_type=block_type,
             dw_kernel_size=_parse_ksize(options['k']),
@@ -274,7 +281,7 @@ class EfficientNetBuilder:
 
     """
     def __init__(self, output_stride=32, pad_type='', round_chs_fn=round_channels, se_from_exp=False,
-                 act_layer=None, norm_layer=None, se_layer=None, drop_path_rate=0., feature_location=''):
+                 act_layer=None, norm_layer=None, se_layer=None, drop_path_rate=0., feature_location='', attention=ReceptiveFieldAttention):
         self.output_stride = output_stride
         self.pad_type = pad_type
         self.round_chs_fn = round_chs_fn
@@ -299,6 +306,7 @@ class EfficientNetBuilder:
         # state updated during build, consumed by model
         self.in_chs = None
         self.features = []
+        self.attention = attention 
 
     def _make_block(self, ba, block_idx, block_count):
         drop_path_rate = self.drop_path_rate * block_idx / block_count
@@ -406,8 +414,11 @@ class EfficientNetBuilder:
 
                 # create the block
                 block = self._make_block(block_args, total_block_idx, total_block_count)
+                
                 blocks.append(block)
-
+                if self.attention:
+                    blocks.append(self.attention(block_args['out_chs'], genotype=Genotype(normal=[('strippool', 0), ('avg_pool_3x3', 0), ('avg_pool_5x5', 1), ('avg_pool_7x7', 0), ('strippool', 2), ('noise', 1)], normal_concat=range(0, 4))))
+                
                 # stash feature module name and channel info for model feature extraction
                 if extract_features:
                     feature_info = dict(
