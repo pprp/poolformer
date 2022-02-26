@@ -461,7 +461,7 @@ class RFSABasicBlock(nn.Module):
         self.drop_path = drop_path
         
         self.attention = ReceptiveFieldSelfAttention(
-            outplanes, genotype=Genotype(normal=[('max_pool_3x3', 0), ('max_pool_3x3', 0), ('max_pool_5x5', 1), ('max_pool_3x3', 0), ('noise', 2), ('noise', 1)], normal_concat=range(0, 4))
+            outplanes, genotype=Genotype(normal=[('strippool', 0), ('avg_pool_3x3', 0), ('avg_pool_5x5', 1), ('avg_pool_7x7', 0), ('strippool', 2), ('noise', 1)], normal_concat=range(0, 4))
         )
 
     def zero_init_last_bn(self):
@@ -662,7 +662,7 @@ class RFSABottleneck(nn.Module):
     def __init__(self, inplanes, planes, stride=1, downsample=None, cardinality=1, base_width=64,
                  reduce_first=1, dilation=1, first_dilation=None, act_layer=nn.ReLU, norm_layer=nn.BatchNorm2d,
                  attn_layer=None, aa_layer=None, drop_block=None, drop_path=None):
-        super(Bottleneck, self).__init__()
+        super(RFSABottleneck, self).__init__()
 
         width = int(math.floor(planes * (base_width / 64)) * cardinality)
         first_planes = width // reduce_first
@@ -694,7 +694,7 @@ class RFSABottleneck(nn.Module):
         self.drop_path = drop_path
     
         self.attention = ReceptiveFieldSelfAttention(
-            outplanes, genotype=Genotype(normal=[('max_pool_3x3', 0), ('max_pool_3x3', 0), ('max_pool_5x5', 1), ('max_pool_3x3', 0), ('noise', 2), ('noise', 1)], normal_concat=range(0, 4))
+            outplanes, genotype=Genotype(normal=[('strippool', 0), ('avg_pool_3x3', 0), ('avg_pool_5x5', 1), ('avg_pool_7x7', 0), ('strippool', 2), ('noise', 1)], normal_concat=range(0, 4))
         )
 
     def zero_init_last_bn(self):
@@ -961,8 +961,10 @@ class ResNet(nn.Module):
             if isinstance(m, nn.Conv2d):
                 nn.init.kaiming_normal_(m.weight, mode='fan_out', nonlinearity='relu')
             elif isinstance(m, nn.BatchNorm2d):
-                nn.init.ones_(m.weight)
-                nn.init.zeros_(m.bias)
+                if m.weight is not None:
+                    nn.init.ones_(m.weight)
+                if m.bias is not None:
+                    nn.init.zeros_(m.bias)
         if zero_init_last_bn:
             for m in self.modules():
                 if hasattr(m, 'zero_init_last_bn'):
@@ -1090,6 +1092,21 @@ def resnet26d(pretrained=False, **kwargs):
     model_args = dict(block=Bottleneck, layers=[2, 2, 2, 2], stem_width=32, stem_type='deep', avg_down=True, **kwargs)
     return _create_resnet('resnet26d', pretrained, **model_args)
 
+
+@register_model
+def resnet50_rfsa(pretrained=False, **kwargs):
+    """Constructs a ResNet-50 model.
+    """
+    model_args = dict(block=RFSABottleneck, layers=[3, 4, 6, 3],  **kwargs)
+    return _create_resnet('resnet50', pretrained, **model_args)
+
+
+@register_model
+def resnet50_rf(pretrained=False, **kwargs):
+    """Constructs a ResNet-50 model.
+    """
+    model_args = dict(block=RFBottleneck, layers=[3, 4, 6, 3],  **kwargs)
+    return _create_resnet('resnet50', pretrained, **model_args)
 
 @register_model
 def resnet50(pretrained=False, **kwargs):
