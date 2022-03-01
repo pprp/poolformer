@@ -5,12 +5,12 @@ from torch.autograd import Variable
 
 
 class StripPool(nn.Module):
-    def __init__(self, in_channels):
+    def __init__(self, in_channels, reduction=4):
         super().__init__()
         self.pool1 = nn.AdaptiveAvgPool2d((1, None))
         self.pool2 = nn.AdaptiveAvgPool2d((None, 1))
 
-        inter_channels = int(in_channels / 2)
+        inter_channels = int(in_channels // reduction)
 
         self.conv1x1 = nn.Sequential(
             nn.Conv2d(in_channels, inter_channels, 1, bias=False),

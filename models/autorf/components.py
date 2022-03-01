@@ -162,15 +162,15 @@ def conv7x7(in_channels, out_channels, stride=1, padding=3, dilation=1):
 
 
 class ReceptiveFieldAttention(nn.Module):
+    # 2752 params
     '''
         receptive field attention module 
         choose:
             se: True or False 
             conv3x3: use 3x3 or 1x3 conv to fuse feature after rf module 
-
     '''
 
-    def __init__(self, C, steps=3, reduction=False, se=True, genotype=None):
+    def __init__(self, C, steps=3, reduction=8, se=True, genotype=None):
         super(ReceptiveFieldAttention, self).__init__()
         assert genotype is not None
         self._ops = nn.ModuleList()
@@ -180,23 +180,24 @@ class ReceptiveFieldAttention(nn.Module):
         self._se = se
         self.C_in = C
         self.conv3x3 = False
+        self.reduction = reduction
 
         self.genotype = genotype
         op_names, indices = zip(*self.genotype.normal)
         concat = genotype.normal_concat
 
-        self.bottle = nn.Conv2d(C, C//4, kernel_size=1,
+        self.bottle = nn.Conv2d(C, C // self.reduction, kernel_size=1,
                                 stride=1, padding=0, bias=False)
 
         self.conv1x1 = nn.Conv2d(
-            C // 4 * self._steps, C, kernel_size=1, stride=1, padding=0, bias=False)
+            C // self.reduction * self._steps, C, kernel_size=1, stride=1, padding=0, bias=False)
 
         if self._se:
-            self.se = SE(self.C_in, reduction=4)
+            self.se = SE(self.C_in, reduction=reduction)
 
         if self.conv3x3:
             self.conv3x3 = nn.Conv2d(
-                C // 4 * self._steps, C, kernel_size=3, stride=1, padding=1, bias=False)
+                C // self.reduction * self._steps, C, kernel_size=3, stride=1, padding=1, bias=False)
 
         self._compile(C, op_names, indices, concat)
 
@@ -207,7 +208,7 @@ class ReceptiveFieldAttention(nn.Module):
 
         self._ops = nn.ModuleList()
         for name, index in zip(op_names, indices):
-            op = OPS[name](self.C_in // 4, 1, True)
+            op = OPS[name](C // self.reduction, 1, True)
             self._ops += [op]
 
         self.indices = indices
@@ -245,6 +246,7 @@ class ReceptiveFieldAttention(nn.Module):
 
 class ReceptiveFieldSelfAttention(nn.Module):
     '''
+        params: 7504 
         receptive field self attention module (add FFN module)
         choose:
             se: True or False 
@@ -252,7 +254,7 @@ class ReceptiveFieldSelfAttention(nn.Module):
 
     '''
 
-    def __init__(self, C, steps=3, reduction=False, se=True, genotype=None, drop_prob=0., mlp_ratio=2.):
+    def __init__(self, C, steps=3, reduction=8, se=True, genotype=None, drop_prob=0., mlp_ratio=8):
         super(ReceptiveFieldSelfAttention, self).__init__()
         assert genotype is not None
         self._ops = nn.ModuleList()
@@ -262,33 +264,33 @@ class ReceptiveFieldSelfAttention(nn.Module):
         self._se = se
         self.C_in = C
         self.conv3x3 = False
-        self.pos_embed = nn.Conv2d(C, C, 3, padding=1, groups=C)
+        self.reduction = reduction 
         self.norm1 = nn.BatchNorm2d(C)
 
         self.genotype = genotype
         op_names, indices = zip(*self.genotype.normal)
         concat = genotype.normal_concat
 
-        self.bottle = nn.Conv2d(C, C//4, kernel_size=1,
+        self.bottle = nn.Conv2d(C, C // self.reduction, kernel_size=1,
                                 stride=1, padding=0, bias=False)
 
         self.conv1x1 = nn.Conv2d(
-            C // 4 * self._steps, C, kernel_size=1, stride=1, padding=0, bias=False)
+            C // self.reduction * self._steps, C, kernel_size=1, stride=1, padding=0, bias=False)
         self.drop_path = DropPath(
             drop_prob) if drop_prob > 0. else nn.Identity()
         self.norm2 = nn.BatchNorm2d(C)
 
-        mlp_hidden_dim = int(C * mlp_ratio)
+        mlp_hidden_dim = int(C // mlp_ratio)
 
         self.mlp = CMlp(
             in_features=C, hidden_features=mlp_hidden_dim, act_layer=nn.GELU, drop=0.)
 
         if self._se:
-            self.se = SE(self.C_in, reduction=4)
+            self.se = SE(self.C_in, reduction=16)
 
         if self.conv3x3:
             self.conv3x3 = nn.Conv2d(
-                C // 4 * self._steps, C, kernel_size=3, stride=1, padding=1, bias=False)
+                C // self.reduction * self._steps, C, kernel_size=3, stride=1, padding=1, bias=False)
 
         self._compile(C, op_names, indices, concat)
 
@@ -299,7 +301,7 @@ class ReceptiveFieldSelfAttention(nn.Module):
 
         self._ops = nn.ModuleList()
         for name, index in zip(op_names, indices):
-            op = OPS[name](self.C_in // 4, 1, True)
+            op = OPS[name](C // self.reduction, 1, True)
             self._ops += [op]
 
         self.indices = indices
@@ -350,7 +352,7 @@ class RFConvNeXtAttention(nn.Module):
 
     '''
 
-    def __init__(self, C, steps=3, reduction=False, se=False, genotype=None, drop_prob=0., mlp_ratio=2.):
+    def __init__(self, C, steps=3, reduction=8, se=False, genotype=None, drop_prob=0., mlp_ratio=4):
         super(RFConvNeXtAttention, self).__init__()
         assert genotype is not None
         self._ops = nn.ModuleList()
@@ -360,7 +362,7 @@ class RFConvNeXtAttention(nn.Module):
         self._se = se
         self.C_in = C
         self.conv3x3 = False
-        self.pos_embed = nn.Conv2d(C, C, 3, padding=1, groups=C)
+        self.reduction = reduction
         # self.norm1 = nn.BatchNorm2d(C)
         self.norm1 = nn.LayerNorm(C, eps=1e-6)
 
@@ -368,14 +370,15 @@ class RFConvNeXtAttention(nn.Module):
         op_names, indices = zip(*self.genotype.normal)
         concat = genotype.normal_concat
 
-        self.bottle = nn.Conv2d(C, C//4, kernel_size=1,
+        self.bottle = nn.Conv2d(C, C // self.reduction, kernel_size=1,
                                 stride=1, padding=0, bias=False)
 
         self.drop_path = DropPath(
             drop_prob) if drop_prob > 0. else nn.Identity()
+        
         self.norm2 = nn.BatchNorm2d(C)
 
-        mlp_hidden_dim = int(C * mlp_ratio)
+        mlp_hidden_dim = int(C // mlp_ratio)
 
         # pointwise/1x1 convs, implemented with linear layers
         self.pwconv1 = nn.Linear(C, mlp_hidden_dim)
@@ -383,14 +386,14 @@ class RFConvNeXtAttention(nn.Module):
         self.pwconv2 = nn.Linear(mlp_hidden_dim, C)
 
         if self._se:
-            self.se = SE(self.C_in, reduction=4)
+            self.se = SE(self.C_in, reduction=self.reduction)
 
         if self.conv3x3:
             self.conv3x3 = nn.Conv2d(
-                C // 4 * self._steps, C, kernel_size=3, stride=1, padding=1, bias=False)
+                C // self.reduction * self._steps, C, kernel_size=3, stride=1, padding=1, bias=False)
         else:
             self.conv1x1 = nn.Conv2d(
-                C // 4 * self._steps, C, kernel_size=1, stride=1, padding=0, bias=False)
+                C // self.reduction * self._steps, C, kernel_size=1, stride=1, padding=0, bias=False)
 
         self._compile(C, op_names, indices, concat)
 
@@ -401,7 +404,7 @@ class RFConvNeXtAttention(nn.Module):
 
         self._ops = nn.ModuleList()
         for name, index in zip(op_names, indices):
-            op = OPS[name](self.C_in // 4, 1, True)
+            op = OPS[name](self.C_in // self.reduction, 1, True)
             self._ops += [op]
 
         self.indices = indices

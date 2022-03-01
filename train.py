@@ -190,7 +190,7 @@ parser.add_argument('--vflip', type=float, default=0.,
                     help='Vertical flip training aug probability')
 parser.add_argument('--color-jitter', type=float, default=0.4, metavar='PCT',
                     help='Color jitter factor (default: 0.4)')
-parser.add_argument('--aa', type=str, default="rand-m9-mstd0.5-inc1", metavar='NAME',
+parser.add_argument('--aa', type=str, default="rand-m6-mstd0.5-inc1", metavar='NAME',
                     help='Use AutoAugment policy. "v0" or "original". (default: rand-m9-mstd0.5-inc1)'),
 parser.add_argument('--aug-repeats', type=int, default=0,
                     help='Number of augmentation repetitions (distributed training only) (default: 0)')
@@ -198,7 +198,7 @@ parser.add_argument('--aug-splits', type=int, default=0,
                     help='Number of augmentation splits (default: 0, valid: 0 or >=2)')
 parser.add_argument('--jsd-loss', action='store_true', default=False,
                     help='Enable Jensen-Shannon Divergence + CE loss. Use with `--aug-splits`.')
-parser.add_argument('--bce-loss', action='store_true', default=False,
+parser.add_argument('--bce-loss', action='store_true', default=True,
                     help='Enable BCE loss w/ Mixup/CutMix use.')
 parser.add_argument('--bce-target-thresh', type=float, default=None,
                     help='Threshold for binarizing softened BCE targets (default: None, disabled)')
@@ -210,9 +210,9 @@ parser.add_argument('--recount', type=int, default=1,
                     help='Random erase count (default: 1)')
 parser.add_argument('--resplit', action='store_true', default=False,
                     help='Do not random erase first (clean) augmentation split')
-parser.add_argument('--mixup', type=float, default=0.,
+parser.add_argument('--mixup', type=float, default=0.1,
                     help='mixup alpha, mixup enabled if > 0. (default: 0.8)')
-parser.add_argument('--cutmix', type=float, default=0.0,
+parser.add_argument('--cutmix', type=float, default=1.0,
                     help='cutmix alpha, cutmix enabled if > 0. (default: 1.0)')
 parser.add_argument('--cutmix-minmax', type=float, nargs='+', default=None,
                     help='cutmix min/max ratio, overrides alpha and enables cutmix if set (default: None)')
@@ -224,7 +224,7 @@ parser.add_argument('--mixup-mode', type=str, default='batch',
                     help='How to apply mixup/cutmix params. Per "batch", "pair", or "elem"')
 parser.add_argument('--mixup-off-epoch', default=0, type=int, metavar='N',
                     help='Turn off mixup after this epoch, disabled if 0 (default: 0)')
-parser.add_argument('--smoothing', type=float, default=0.1,
+parser.add_argument('--smoothing', type=float, default=0,
                     help='Label smoothing (default: 0.1)')
 parser.add_argument('--train-interpolation', type=str, default='random',
                     help='Training interpolation (random, bilinear, bicubic default: "random")')
