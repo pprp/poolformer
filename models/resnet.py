@@ -1141,6 +1141,12 @@ def resnet101(pretrained=False, **kwargs):
     model_args = dict(block=Bottleneck, layers=[3, 4, 23, 3], **kwargs)
     return _create_resnet('resnet101', pretrained, **model_args)
 
+@register_model
+def resnet101_rf(pretrained=False, **kwargs):
+    """Constructs a ResNet-101 with RF block model.
+    """
+    model_args = dict(block=RFBottleneck, layers=[3, 4, 23, 3],  **kwargs)
+    return _create_resnet('resnet50', pretrained, **model_args)
 
 @register_model
 def resnet101d(pretrained=False, **kwargs):

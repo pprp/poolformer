@@ -5,7 +5,7 @@ from torch.autograd import Variable
 
 
 class StripPool(nn.Module):
-    def __init__(self, in_channels, reduction=4):
+    def __init__(self, in_channels, reduction=2):
         super().__init__()
         self.pool1 = nn.AdaptiveAvgPool2d((1, None))
         self.pool2 = nn.AdaptiveAvgPool2d((None, 1))

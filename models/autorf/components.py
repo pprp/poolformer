@@ -170,7 +170,7 @@ class ReceptiveFieldAttention(nn.Module):
             conv3x3: use 3x3 or 1x3 conv to fuse feature after rf module 
     '''
 
-    def __init__(self, C, steps=3, reduction=8, se=True, genotype=None):
+    def __init__(self, C, steps=3, reduction=4, se=True, genotype=None):
         super(ReceptiveFieldAttention, self).__init__()
         assert genotype is not None
         self._ops = nn.ModuleList()
@@ -254,7 +254,7 @@ class ReceptiveFieldSelfAttention(nn.Module):
 
     '''
 
-    def __init__(self, C, steps=3, reduction=8, se=True, genotype=None, drop_prob=0., mlp_ratio=8):
+    def __init__(self, C, steps=3, reduction=4, se=True, genotype=None, drop_prob=0., mlp_ratio=8):
         super(ReceptiveFieldSelfAttention, self).__init__()
         assert genotype is not None
         self._ops = nn.ModuleList()

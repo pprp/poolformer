@@ -462,8 +462,10 @@ def _init_weight_goog(m, n='', fix_group_fanout=True):
         if m.bias is not None:
             nn.init.zeros_(m.bias)
     elif isinstance(m, nn.BatchNorm2d):
-        nn.init.ones_(m.weight)
-        nn.init.zeros_(m.bias)
+        if m.weight is not None:
+            nn.init.ones_(m.weight)
+        if m.bias is not None:
+            nn.init.zeros_(m.bias)
     elif isinstance(m, nn.Linear):
         fan_out = m.weight.size(0)  # fan-out
         fan_in = 0

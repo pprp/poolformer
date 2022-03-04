@@ -91,9 +91,42 @@ TODO LIST:
 
 
 ################################################# 20 % imagenet ####################
-DATA=/data/home/scv6681/run/data
-CUDA_VISIBLE_DEVICES=0 ./distributed_train.sh 1 29301 $DATA \
-  --model resnet50 -b 256 --lr 4e-3 --drop-path 0. --apex-amp --epochs 100 --decay-epochs 30 --opt lamb --sched cosine --weight-decay 0.02 --reprob 0. --color-jitter 0. 
 
-# CUDA_VISIBLE_DEVICES=0,1,2,3 ./distributed_train.sh 4 29211 $DATA \
-#   --model resnet50_rf -b 256 --lr 4e-3 --drop-path 0. --apex-amp --epochs 100 --decay-epochs 30 --opt lamb --sched cosine --weight-decay 0.02 --reprob 0. --color-jitter 0. 
+# date 
+# unzip -n /data/home/scv6681/run/data/imagenet20_percent.zip -d /dev/shm 
+# date 
+
+# DATA=/dev/shm/imagenet20_percent
+
+# DATA=/data/home/scv6681/run/data/imagenet20_percent
+
+
+
+# CUDA_VISIBLE_DEVICES=0,1,2,3 ./distributed_train.sh 4 29121 $DATA \
+# --model mobilenetv2_100 -b 512 --lr 5e-3  --apex-amp --epochs 200 --decay-epochs 1 --decay-rate 0.988 --opt lamb --sched cosine --weight-decay 0.1 --reprob 0. --color-jitter 0. --cutmix 0 --drop 0.1 --drop-path 0.08 --mixup 0.15 --smoothing 0.1 --workers 8
+
+# CUDA_VISIBLE_DEVICES=0,1,2,3 ./distributed_train.sh 4 29121 $DATA \
+# --model mobilenetv2_rf_100 -b 512 --lr 5e-3  --apex-amp --epochs 200 --decay-epochs 1 --decay-rate 0.988 --opt lamb --sched cosine --weight-decay 0.1 --reprob 0. --color-jitter 0. --cutmix 0 --drop 0.1 --drop-path 0.08 --mixup 0.15 --smoothing 0.1 --workers 8
+
+
+#########################################100% imagenet ########################
+
+DATA=/data/public/imagenet2012
+# CUDA_VISIBLE_DEVICES=0,1,2,3 ./distributed_train.sh 4 29101 $DATA \
+#   --model resnet50 -b 256 --lr 4e-3 --drop-path 0. --apex-amp --epochs 100 --decay-epochs 30 --opt lamb --sched cosine --weight-decay 0.02 --reprob 0. --color-jitter 0. 
+
+
+# CUDA_VISIBLE_DEVICES=0,1,2,3 ./distributed_train.sh 4 23321 $DATA \
+  # --model resnet50_rf -b 256 --lr 4e-3 --drop-path 0. --apex-amp --epochs 100 --decay-epochs 30 --opt lamb --sched cosine --weight-decay 0.02 --reprob 0. --color-jitter 0. --workers 4 
+
+
+# CUDA_VISIBLE_DEVICES=0,1,2,3 ./distributed_train.sh 4 22111 $DATA \
+  # --model resnet50_rfsa -b 128 --lr 2e-3 --drop-path 0. --apex-amp --epochs 100 --decay-epochs 30 --opt lamb --sched cosine --weight-decay 0.02 --reprob 0. --color-jitter 0. 
+
+
+# CUDA_VISIBLE_DEVICES=0,1,2,3 ./distributed_train.sh 4 23561 $DATA \
+#   --model resnet101 -b 128 --lr 2e-3 --drop-path 0. --apex-amp --epochs 100 --decay-epochs 30 --opt lamb --sched cosine --weight-decay 0.02 --reprob 0. --color-jitter 0. --workers 8
+
+## 训练SEResNet50 用于最终可视化CAM
+CUDA_VISIBLE_DEVICES=0,1,2,3 ./distributed_train.sh 4 29101 $DATA \
+  --model seresnet50 -b 256 --lr 4e-3 --drop-path 0. --apex-amp --epochs 100 --decay-epochs 30 --opt lamb --sched cosine --weight-decay 0.02 --reprob 0. --color-jitter 0. 
